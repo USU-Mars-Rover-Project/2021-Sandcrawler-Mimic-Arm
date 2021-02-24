@@ -3,21 +3,12 @@
 #include "RoboticArm.h"
 
 
-RoboticArm::RoboticArm() {
-    BaseSignalPin = 9;
-    ShoulderSignalPin = 10;
-    ElbowSignalPin = 11;
-    WristSignalPin = 12;
-    ClawSignalPin = 13;
-}
-
-
 void RoboticArm::Setup() {
-    BaseServo.attach(BaseSignalPin);
-    ShoulderServo.attach(ShoulderSignalPin);
-    ElbowServo.attach(ElbowSignalPin);
-    WristServo.attach(WristSignalPin);
-    ClawServo.attach(ClawSignalPin);
+    BaseServo.attach(BASE_OUTPUT_PIN);
+    ShoulderServo.attach(SHOULDER_OUTPUT_PIN);
+    ElbowServo.attach(ELBOW_OUTPUT_PIN);
+    WristServo.attach(WRIST_OUTPUT_PIN);
+    ClawServo.attach(CLAW_OUTPUT_PIN);
 }
 
 

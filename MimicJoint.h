@@ -1,7 +1,5 @@
 #pragma once
 
-#include "JointInstances.h"
-
 class MimicJoint {
     public:
         void Setup(int signalPin, int angleOffset, int angleMin, int angleMax);

@@ -8,12 +8,6 @@ MimicArm* MimicArm::MimicArmInstance;
 
 
 void MimicArm::Setup() {
-    int BaseSignalPin = A8;
-    int ShoulderSignalPin = A9;
-    int ElbowSignalPin = A10;
-    int WristSignalPin = A11;
-    int ClawSignalPin = A12;
-
     int BaseAngleOffset = 0;
     int ShoulderAngleOffset = 0;
     int ElbowAngleOffset = 0;
@@ -35,11 +29,11 @@ void MimicArm::Setup() {
     delete MimicArmInstance;            //Much responsible. Wow.
     MimicArmInstance = new MimicArm();
 
-    MimicArmInstance->Base.Setup(BaseSignalPin, BaseAngleOffset, BaseAngleMin, BaseAngleMax);
-    MimicArmInstance->Shoulder.Setup(ShoulderSignalPin, ShoulderAngleOffset, ShoulderAngleMin, ShoulderAngleMax);
-    MimicArmInstance->Elbow.Setup(ElbowSignalPin, ElbowAngleOffset, ElbowAngleMin, ElbowAngleMax);
-    MimicArmInstance->Wrist.Setup(WristSignalPin, WristAngleOffset, WristAngleMin, WristAngleMax);
-    MimicArmInstance->Claw.Setup(ClawSignalPin, ClawAngleOffset, ClawAngleMin, ClawAngleMax);
+    MimicArmInstance->Base.Setup(BASE_SIGNAL_PIN, BaseAngleOffset, BaseAngleMin, BaseAngleMax);
+    MimicArmInstance->Shoulder.Setup(SHOULDER_SIGNAL_PIN, ShoulderAngleOffset, ShoulderAngleMin, ShoulderAngleMax);
+    MimicArmInstance->Elbow.Setup(ELBOW_SIGNAL_PIN, ElbowAngleOffset, ElbowAngleMin, ElbowAngleMax);
+    MimicArmInstance->Wrist.Setup(WRIST_SIGNAL_PIN, WristAngleOffset, WristAngleMin, WristAngleMax);
+    MimicArmInstance->Claw.Setup(CLAW_SIGNAL_PIN, ClawAngleOffset, ClawAngleMin, ClawAngleMax);
 }
 
 

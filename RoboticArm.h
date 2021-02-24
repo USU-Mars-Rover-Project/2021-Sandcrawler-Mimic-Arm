@@ -3,10 +3,16 @@
 #include <Arduino.h>
 #include <Servo.h>
 
+
+#define BASE_OUTPUT_PIN 9
+#define SHOULDER_OUTPUT_PIN 10
+#define ELBOW_OUTPUT_PIN 11
+#define WRIST_OUTPUT_PIN 12
+#define CLAW_OUTPUT_PIN 13
+
+
 class RoboticArm {
     public:
-        RoboticArm();
-
         void Setup();
 
         void SetBaseAngle(int baseAngle);
