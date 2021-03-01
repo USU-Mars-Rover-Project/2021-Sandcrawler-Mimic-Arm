@@ -30,7 +30,7 @@ This code has two sides to it. It measures the position of the mimic arm by read
 
 Mimic Arm
 ----------
-The mimc arm encoders send PWM signals. This code used pin change interupts to read the signals.
+The mimc arm encoders send PWM signals. This code uses pin change interupts to read the signals.
 
 MimicArm
 
@@ -39,6 +39,7 @@ This class handles the settings for the mimic arm including these for each encod
   - angle offset
   - angle minimum
   - angle maximum
+  - 
 The MimicArm object stores this data in the MimicJoint Objects
 
 MimicJoint
@@ -47,4 +48,8 @@ This class handles communication with the encoders. It uses pin change interrups
 
 Robotic Arm
 -----------
-The robotic arm receives PWM signals to determine the target position.
+The robotic arm receives PWM signals to determine the target position. This code uses the arduino's PWM pins to send these signals.
+
+RoboticArm
+
+This class handles the pin settings for the robotic arm. It also contains the Servo objects, which handle sending the PWM signals.
