@@ -4,48 +4,51 @@
 
 
 void RoboticArm::Setup() {
-    BaseServo.attach(BASE_OUTPUT_PIN);
-    ShoulderServo.attach(SHOULDER_OUTPUT_PIN);
-    ElbowServo.attach(ELBOW_OUTPUT_PIN);
-    WristServo.attach(WRIST_OUTPUT_PIN);
-    ClawServo.attach(CLAW_OUTPUT_PIN);
+    pinMode(SHOULDER_OUTPUT_PIN, OUTPUT);
+    this->BaseServo.attach(BASE_OUTPUT_PIN);
+    this->ShoulderServo.attach(SHOULDER_OUTPUT_PIN);
+    this->ElbowServo.attach(ELBOW_OUTPUT_PIN);
+    this->WristServo.attach(WRIST_OUTPUT_PIN);
+    this->ForearmServo.attach(FOREARM_OUTPUT_PIN);
+    this->ClawServo.attach(CLAW_OUTPUT_PIN);
 }
 
 
 void RoboticArm::SetBaseAngle(int baseAngle) {
-    BaseAngle = baseAngle;
+    this->BaseAngle = baseAngle;
 }
 
 
 void RoboticArm::SetShoulderAngle(int shoulderAngle) {
-    ShoulderAngle = shoulderAngle;
+    this->ShoulderAngle = shoulderAngle;
 }
 
 
 void RoboticArm::SetElbowAngle(int elbowAngle) {
-    ElbowAngle = elbowAngle;
+    this->ElbowAngle = elbowAngle;
 }
 
 
 void RoboticArm::SetWristAngle(int wristAngle) {
-    WristAngle = wristAngle;
+    this->WristAngle = wristAngle;
 }
 
 
 void RoboticArm::SetForearmAngle(int forearmAngle) {
-    ForearmAngle = forearmAngle;
+    this->ForearmAngle = forearmAngle;
 }
 
 
 void RoboticArm::SetClawAngle(int clawAngle) {
-    ClawAngle = clawAngle;
+    this->ClawAngle = clawAngle;
 }
 
 
 void RoboticArm::UpdateArmPosition() {
-    BaseServo.write(BaseAngle);
-    ShoulderServo.write(ShoulderAngle);
-    ElbowServo.write(ElbowAngle);
-    WristServo.write(WristAngle);
-    ClawServo.write(ClawAngle);
+    this->BaseServo.write(BaseAngle);
+    this->ShoulderServo.write(ShoulderAngle);
+    this->ElbowServo.write(ElbowAngle);
+    this->WristServo.write(WristAngle);
+    this->ForearmServo.write(ForearmAngle);
+    this->ClawServo.write(ClawAngle);
 }

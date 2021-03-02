@@ -1,4 +1,5 @@
 #pragma once
+#include <Arduino.h>
 
 class MimicJoint {
     public:
@@ -12,7 +13,7 @@ class MimicJoint {
         int AngleMin;
         int AngleMax;
 
-        volatile int Angle;
+        volatile int Angle = 0;
         volatile unsigned long MicrosAtFall;
         volatile unsigned long MicrosAtRise;
 
@@ -22,15 +23,15 @@ class MimicJoint {
         class JointInstances {
             public:
                 MimicJoint* GetInstance(int jointPin) {
-                    for(int i = 0; i <= elements; i++)
-                        if(Pins[i] == jointPin)
-                            return Joints[i];
+                    for(int i = 0; i < this->elements; i++)
+                        if(this->Pins[i] == jointPin)
+                            return this->Joints[i];
                     return nullptr;
                 };
                 void Append(int jointPin, MimicJoint* jointInstance) {
-                    Pins[elements] = jointPin;
-                    Joints[elements] = jointInstance;
-                    elements++;
+                    this->Pins[elements] = jointPin;
+                    this->Joints[elements] = jointInstance;
+                    this->elements++;
                 };
             private:
                 int elements = 0;
