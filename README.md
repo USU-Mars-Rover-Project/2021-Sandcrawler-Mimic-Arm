@@ -39,7 +39,7 @@ This class handles the settings for the mimic arm including these for each encod
   - angle offset
   - angle minimum
   - angle maximum
-  - 
+
 The MimicArm object stores this data in the MimicJoint Objects
 
 MimicJoint
