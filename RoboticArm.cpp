@@ -32,6 +32,11 @@ void RoboticArm::SetWristAngle(int wristAngle) {
 }
 
 
+void RoboticArm::SetForearmAngle(int forearmAngle) {
+    ForearmAngle = forearmAngle;
+}
+
+
 void RoboticArm::SetClawAngle(int clawAngle) {
     ClawAngle = clawAngle;
 }
