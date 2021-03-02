@@ -41,7 +41,7 @@ int MimicArm::GetWristAngle() {
 
 
 int MimicArm::GetForearmAngle() {
-    return MimicArmInstance->Forearm.GetAngle
+    return MimicArmInstance->Forearm.GetAngle();
 }
 
 

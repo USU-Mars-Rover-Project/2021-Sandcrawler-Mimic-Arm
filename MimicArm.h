@@ -48,5 +48,5 @@ class MimicArm {
         MimicJoint Wrist;
         MimicJoint Forearm;
         MimicJoint Claw;
-        MimicArm();
+        MimicArm() {};
 };
