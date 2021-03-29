@@ -14,18 +14,20 @@
 
 class RoboticArm {
     public:
-        void Setup();
+        static void Setup();
 
-        void SetBaseAngle(int baseAngle);
-        void SetShoulderAngle(int shoulderAngle);
-        void SetElbowAngle(int elbowAngle);
-        void SetWristAngle(int wristAngle);
-        void SetForearmAngle(int forearmAngle);
-        void SetClawAngle(int clawAngle);
+        static void SetBaseAngle(int baseAngle);
+        static void SetShoulderAngle(int shoulderAngle);
+        static void SetElbowAngle(int elbowAngle);
+        static void SetWristAngle(int wristAngle);
+        static void SetForearmAngle(int forearmAngle);
+        static void SetClawAngle(int clawAngle);
 
-        void UpdateArmPosition();
+        static void UpdateArmPosition();
 
     private:
+        static RoboticArm* RoboticArmInstance;
+
         int BaseAngle;
         int ShoulderAngle;
         int ElbowAngle;
@@ -39,4 +41,6 @@ class RoboticArm {
         Servo WristServo;
         Servo ForearmServo;
         Servo ClawServo;
+
+        RoboticArm() {};
 };

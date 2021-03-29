@@ -3,16 +3,13 @@
 #include "RoboticArm.h"
 
 
-RoboticArm roboticArm;
-
-
 void setup() {
     Serial.begin(9600);
 
     delay(1000);
 
     MimicArm::Setup();
-    roboticArm.Setup();
+    RoboticArm::Setup();
 }
 
 
@@ -23,7 +20,7 @@ void loop() {
     int wristAngle = MimicArm::GetWristAngle();
     int forearmAngle = MimicArm::GetForearmAngle();
     int clawAngle = MimicArm::GetClawAngle();
-//*
+
     Serial.println(baseAngle);
     Serial.print("Shoulder: ");
     Serial.println(shoulderAngle);
@@ -31,13 +28,13 @@ void loop() {
     Serial.println(wristAngle);
     Serial.println(forearmAngle);
     Serial.println(clawAngle);
-//*/
-    roboticArm.SetBaseAngle(baseAngle);
-    roboticArm.SetShoulderAngle(shoulderAngle);
-    roboticArm.SetElbowAngle(elbowAngle);
-    roboticArm.SetWristAngle(wristAngle);
-    roboticArm.SetForearmAngle(forearmAngle);
-    roboticArm.SetClawAngle(clawAngle);
 
-    roboticArm.UpdateArmPosition();
+    RoboticArm::SetBaseAngle(baseAngle);
+    RoboticArm::SetShoulderAngle(shoulderAngle);
+    RoboticArm::SetElbowAngle(elbowAngle);
+    RoboticArm::SetWristAngle(wristAngle);
+    RoboticArm::SetForearmAngle(forearmAngle);
+    RoboticArm::SetClawAngle(clawAngle);
+
+    RoboticArm::UpdateArmPosition();
 }

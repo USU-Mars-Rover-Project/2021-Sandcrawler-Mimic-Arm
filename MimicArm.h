@@ -42,6 +42,7 @@ class MimicArm {
 
     private:
         static MimicArm* MimicArmInstance;  //Look up "singleton". It's kinda that.
+
         MimicJoint Base;
         MimicJoint Shoulder;
         MimicJoint Elbow;
