@@ -1,6 +1,5 @@
 #include <Arduino.h>
 #include "MimicArm.h"
-#include "RoboticArm.h"
 
 
 void setup() {
@@ -9,7 +8,6 @@ void setup() {
     delay(1000);
 
     MimicArm::Setup();
-    RoboticArm::Setup();
 }
 
 
@@ -28,13 +26,4 @@ void loop() {
     Serial.println(wristAngle);
     Serial.println(forearmAngle);
     Serial.println(clawAngle);
-
-    RoboticArm::SetBaseAngle(baseAngle);
-    RoboticArm::SetShoulderAngle(shoulderAngle);
-    RoboticArm::SetElbowAngle(elbowAngle);
-    RoboticArm::SetWristAngle(wristAngle);
-    RoboticArm::SetForearmAngle(forearmAngle);
-    RoboticArm::SetClawAngle(clawAngle);
-
-    RoboticArm::UpdateArmPosition();
 }
