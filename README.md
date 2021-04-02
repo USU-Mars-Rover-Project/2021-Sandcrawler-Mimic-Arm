@@ -48,8 +48,4 @@ This class handles communication with the encoders. It uses pin change interrups
 
 Robotic Arm
 -----------
-The robotic arm receives PWM signals to determine the target position. This code uses the arduino's PWM pins to send these signals.
-
-RoboticArm
-
-This class handles the pin settings for the robotic arm. It also contains the Servo objects, which handle sending the PWM signals.
+See RoboticArm repository.
