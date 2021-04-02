@@ -19,11 +19,12 @@ void loop() {
     int forearmAngle = MimicArm::GetForearmAngle();
     int clawAngle = MimicArm::GetClawAngle();
 
+    Serial.print('<');
     Serial.println(baseAngle);
-    Serial.print("Shoulder: ");
     Serial.println(shoulderAngle);
     Serial.println(elbowAngle);
     Serial.println(wristAngle);
     Serial.println(forearmAngle);
     Serial.println(clawAngle);
+    Serial.println('>')
 }
