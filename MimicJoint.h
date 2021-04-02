@@ -3,15 +3,14 @@
 
 class MimicJoint {
     public:
-        void Setup(int signalPin, int angleOffset, int angleMin, int angleMax);
+        void Setup(int signalPin, int signalMin, int signalToAngleConversion);
         int GetAngle();
 
     private:
         int SignalPin;
 
-        int AngleOffset;
-        int AngleMin;
-        int AngleMax;
+        int SignalMin;
+        int SignalToAngleConversion;
 
         volatile int Angle = 0;
         volatile unsigned long MicrosAtFall;
@@ -35,7 +34,7 @@ class MimicJoint {
                 };
             private:
                 int elements = 0;
-                #define NUM_JOINTS 5    //Sorry, it's hard coded to avoid dynamic horror
+                #define NUM_JOINTS 6    //Sorry, it's hard coded to avoid dynamic horror
                 int Pins[NUM_JOINTS];
                 MimicJoint* Joints[NUM_JOINTS];
         };

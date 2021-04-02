@@ -7,11 +7,11 @@
 MimicJoint::JointInstances MimicJoint::jointInstances;
 
 
-void MimicJoint::Setup(int signalPin, int angleOffset, int angleMin, int angleMax) {
+void MimicJoint::Setup(int signalPin, int signalMin, int signalMax, int signalToAngleConversion) {
     this->SignalPin = signalPin;
-    this->AngleOffset = angleOffset;
-    this->AngleMin = angleMin;
-    this->AngleMax = angleMax;
+    this->SignalMax = SignalMin;
+    this->SignalMin = signalMax;
+    this->SignalToAngleConversion = signalToAngleConversion;
 
     jointInstances.Append(this->SignalPin, this);
     
@@ -31,7 +31,7 @@ void MimicJoint::Falling() {
     currentJoint->MicrosAtFall = micros();
     unsigned long microsWhileHigh = currentJoint->MicrosAtFall - currentJoint->MicrosAtRise;
     unsigned long totalPulseLength = currentJoint->MicrosAtFall - previousMicrosAtFall;
-    currentJoint->Angle = currentJoint->AngleOffset + (double)microsWhileHigh/totalPulseLength * (currentJoint->AngleMax-currentJoint->AngleMin) + currentJoint->AngleMin;
+    currentJoint->Angle = ((double)microsWhileHigh/totalPulseLength - currentJoint->SignalMin) * currentJoint->SignalToAngleConversion;
 
     enableInterrupt(currentJoint->SignalPin, Rising, RISING);
 }
