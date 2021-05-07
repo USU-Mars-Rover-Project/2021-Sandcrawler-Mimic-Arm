@@ -7,10 +7,9 @@
 MimicJoint::JointInstances MimicJoint::jointInstances;
 
 
-void MimicJoint::Setup(int signalPin, int signalMin, int signalMax, int signalToAngleConversion) {
+void MimicJoint::Setup(int signalPin, double signalMin, int signalToAngleConversion) {
     this->SignalPin = signalPin;
-    this->SignalMax = SignalMin;
-    this->SignalMin = signalMax;
+    this->SignalMin = signalMin;
     this->SignalToAngleConversion = signalToAngleConversion;
 
     jointInstances.Append(this->SignalPin, this);

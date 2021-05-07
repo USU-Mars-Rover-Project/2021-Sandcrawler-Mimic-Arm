@@ -15,8 +15,8 @@ void MimicArm::Setup() {
     MimicArmInstance->Shoulder.Setup(SHOULDER_SIGNAL_PIN, SHOULDER_SIGNAL_MIN, SIGNAL_TO_ANGLE_CONVERSION);
     MimicArmInstance->Elbow.Setup(ELBOW_SIGNAL_PIN, ELBOW_SIGNAL_MIN, SIGNAL_TO_ANGLE_CONVERSION);
     MimicArmInstance->Wrist.Setup(WRIST_SIGNAL_PIN, WRIST_SIGNAL_MIN, SIGNAL_TO_ANGLE_CONVERSION);
-    MimicArmInstance->Forearm.Setup(FOREARM_SIGNAL_PIN, FOREARM_SIGNAL_MIN, SIGNAL_TO_ANGLE_CONVERSION);
-    MimicArmInstance->Claw.Setup(CLAW_SIGNAL_PIN, CLAW_SIGNAL_MIN, SIGNAL_TO_ANGLE_CONVERSION);
+    //MimicArmInstance->Forearm.Setup(FOREARM_SIGNAL_PIN, FOREARM_SIGNAL_MIN, SIGNAL_TO_ANGLE_CONVERSION);
+    //MimicArmInstance->Claw.Setup(CLAW_SIGNAL_PIN, CLAW_SIGNAL_MIN, SIGNAL_TO_ANGLE_CONVERSION);
 }
 
 
@@ -41,10 +41,10 @@ int MimicArm::GetWristAngle() {
 
 
 int MimicArm::GetForearmAngle() {
-    return MimicArmInstance->Forearm.GetAngle();
+    return (analogRead(FOREARM_SIGNAL_PIN) - FOREARM_SIGNAL_MIN) * POT_SIGNAL_TO_ANGLE_CONVERSION;
 }
 
 
 int MimicArm::GetClawAngle() {
-    return MimicArmInstance->Claw.GetAngle();
+    return (analogRead(CLAW_SIGNAL_PIN) - CLAW_SIGNAL_MIN) * POT_SIGNAL_TO_ANGLE_CONVERSION;
 }

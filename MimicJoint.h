@@ -3,13 +3,13 @@
 
 class MimicJoint {
     public:
-        void Setup(int signalPin, int signalMin, int signalToAngleConversion);
+        void Setup(int signalPin, double signalMin, int signalToAngleConversion);
         int GetAngle();
 
     private:
         int SignalPin;
 
-        int SignalMin;
+        double SignalMin;
         int SignalToAngleConversion;
 
         volatile int Angle = 0;
