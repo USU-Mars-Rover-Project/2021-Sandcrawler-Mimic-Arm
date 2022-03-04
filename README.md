@@ -34,11 +34,10 @@ The mimc arm encoders send PWM signals. This code uses pin change interupts to r
 
 MimicArm
 
-This class handles the settings for the mimic arm including these for each encoder (one for each joint):
-  - pin
-  - angle offset
-  - angle minimum
-  - angle maximum
+This class handles the settings for the mimic arm. The settings include:
+  - pin - the pin the arduino uses to measure the angle, one for each joint
+  - signal minimum - the signal the arduino recieves at the minimum desired angle, one for each joint
+  - signal to angle conversion - multiplier to convert signal to angle, one for each type of angle measuring device (there are encoders and pots)
 
 The MimicArm object stores this data in the MimicJoint Objects
 
